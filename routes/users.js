@@ -11,7 +11,7 @@ router.get('/', authenticate.verifyUser, authenticate.verifyAdmin, function(req,
     .then(users => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json(partner);
+        res.json(users);
     })
     .catch(err => next(err));
 });
